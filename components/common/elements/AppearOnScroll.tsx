@@ -1,5 +1,5 @@
 import React, {FC, forwardRef, ForwardRefRenderFunction, Fragment, useEffect, useRef, useState} from "react";
-import Animate, {AnimeProps} from "react-anime";
+import Animate, {AnimeProps} from "./Animate";
 
 interface IAppearOnScrollProps {
   offScreenProperties?: Partial<AnimeProps>,
@@ -9,7 +9,6 @@ interface IAppearOnScrollProps {
   animationDisabled?: boolean,
   animationDisabledState?: "hidden" | "visible",
   repeat?: boolean,
-  component?: unknown
 
   [additionalProps: string]: unknown
 }
@@ -19,7 +18,7 @@ const defaultProps = {
   duration: 1,
   offScreenProperties: {opacity: 0},
   onScreenProperties: {translateY: ["15em", "0em"], opacity: [0, 1]}
-} as const;
+};
 
 const AppearOnScroll: FC<IAppearOnScrollProps & typeof defaultProps> = (
   {
@@ -31,7 +30,6 @@ const AppearOnScroll: FC<IAppearOnScrollProps & typeof defaultProps> = (
     delay,
     duration,
     repeat,
-    component,
     ...rest
   }) => {
   const animations = {
@@ -59,11 +57,9 @@ const AppearOnScroll: FC<IAppearOnScrollProps & typeof defaultProps> = (
     setVariant(animationDisabled ? animationDisabledState || 'visible' : 'hidden')
   }, [animationDisabled, animationDisabledState])
 
-  if (!component) {
-    const SurrogateComponent: ForwardRefRenderFunction<any> = (props, ref) => <div
-      ref={ref} {...props} {...rest}/>
-    component = forwardRef(SurrogateComponent);
-  }
+  const SurrogateComponent: ForwardRefRenderFunction<any> = (props, ref) => <div
+    ref={ref} {...props} {...rest}/>
+  const component = forwardRef(SurrogateComponent);
 
 
   return <Fragment>

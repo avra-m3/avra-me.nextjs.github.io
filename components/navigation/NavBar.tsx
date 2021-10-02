@@ -20,7 +20,7 @@ import {MenuItem} from "../../store/types/navigation";
 import {Theme} from "@material-ui/core";
 import {useRouter} from "next/router";
 import {sortBy} from "lodash-es";
-import Animate from "react-anime";
+import Animate from "../common/elements/Animate";
 
 const styles = (theme: Theme): StyleRules => ({
   appBar: {
