@@ -2,9 +2,8 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: !!process.env.BUNDLE_VIEWER,
 })
-const withTM = require('next-transpile-modules')(['react-anime']);
 const withPreact = require('next-plugin-preact');
-module.exports = withBundleAnalyzer(withPreact(withTM({
+module.exports = withBundleAnalyzer(withPreact({
     webpack(config) {
         Object.assign(config.resolve.alias, {
             "react": "preact/compat",
@@ -14,4 +13,4 @@ module.exports = withBundleAnalyzer(withPreact(withTM({
         })
         return config
     }
-})))
+}))
