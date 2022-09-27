@@ -9,7 +9,7 @@ short: |
   ##### *RMIT Library (Capstone)* Solution Architect and Engineer
   Designing and developing a resilient, performant solution for visualizing
   thousands of record access per day from the RMIT library.
-featured: true
+featured: false
 image: "/assets/integration_rmit.svg"
 showYearOnly: false
 tags:

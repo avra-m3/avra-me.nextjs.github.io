@@ -1,0 +1,13 @@
+---
+type: DynamicForm
+order: 6
+name: contact-form
+section:
+    title: Contact Me
+    subTitle: Have something you want to discuss? Send me a message!
+    elevate: true
+    titleClassName: "text-center"
+    subtitleClassName: "text-center"
+children:
+    source: home/formFields
+    key: fields

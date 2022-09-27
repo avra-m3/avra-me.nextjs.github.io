@@ -29,26 +29,9 @@ const baseMarkdownStyling = css`
     font-size: 1.5em;
     vertical-align: bottom;
   }
-
-  &.header {
-    h1 {
-      font-size: 3rem;
-      line-height: 1.167;
-      text-align: center;
-    }
-
-    h2 {
-      @media (max-width: 959.95px) {
-        display: none;
-      }
-      font-size: 1.5rem;
-      line-height: 1.334;
-      text-align: center;
-    }
-  }
 `
 
-const MardownContainer = styled("div")(({theme}) => css([
+const MarkdownContainer = styled("div")(({theme}) => css([
     baseMarkdownStyling,
     {
       label: 'markdown',
@@ -56,7 +39,7 @@ const MardownContainer = styled("div")(({theme}) => css([
       li: theme.typography.body2,
       color: theme.palette.text.primary,
       h1: theme.typography.h1,
-      h2: theme.typography.h2,
+      h2: theme.typography.h4,
       h3: theme.typography.h3,
       h4: theme.typography.h4,
       h5: theme.typography.h5,
@@ -67,7 +50,7 @@ const MardownContainer = styled("div")(({theme}) => css([
 
 const SectionContentMarkdown: FunctionComponent<SectionContentMarkdownProps> = ({content, className}) => {
   const markdownRef = useRef(null);
-  return <MardownContainer ref={markdownRef} className={clsx("markdown", className)}
+  return <MarkdownContainer ref={markdownRef} className={clsx("markdown", className)}
                            dangerouslySetInnerHTML={{__html: content}}/>;
 }
 

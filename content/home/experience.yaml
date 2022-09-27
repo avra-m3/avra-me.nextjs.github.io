@@ -1,6 +1,10 @@
 type: HorizontalCardSection
 order: 3
-title: Experience
+section:
+    elevate: true
+    title: Experience
+    titleClassName: "text-center"
+    subtitleClassName: "text-center"
 children:
     source: experience/cards
     key: items

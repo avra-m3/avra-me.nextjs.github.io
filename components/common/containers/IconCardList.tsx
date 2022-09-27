@@ -1,15 +1,13 @@
 import {Chip, Grid, Icon, Theme, Tooltip, useMediaQuery,} from "@mui/material";
 import React, {FunctionComponent} from "react";
 import {IconCardSection as IconCardSectionType, InteractionItem} from "../../../store/types/home";
-import SectionContainer from "../SectionContainer";
 import IconCard from "../IconCard";
 import Link from "next/link";
 import {slice} from "lodash-es";
 import SectionContentMarkdown from "../elements/SectionContentMarkdown";
-
-import SectionTitleMarkdown from "../elements/SectionTitleMarkdown";
 import {styled} from "@mui/material/styles";
 import {css} from "@emotion/react";
+import Hidden from "@mui/material/Hidden";
 
 const StyledIconCard = styled(IconCard)({
   height: "100%",
@@ -29,7 +27,7 @@ const StyledChip: typeof Chip = styled(Chip)(css`
   }
 `) as typeof Chip;
 
-const IconCardList: FunctionComponent<IconCardSectionType> = ({items, content, title, subTitle}) => {
+const IconCardList: FunctionComponent<IconCardSectionType> = ({items}) => {
   const isMdUp = useMediaQuery((theme: Theme) => theme.breakpoints.up("md"));
 
 
@@ -47,7 +45,7 @@ const IconCardList: FunctionComponent<IconCardSectionType> = ({items, content, t
     return <Link key={link} href={link} passHref={true}>{chip}</Link>
   };
 
-  return <SectionContainer title={title} subTitle={subTitle}>
+  return <>
 
     {items && items.map((card, i) => {
       const delay = isMdUp ? Math.min(Math.floor(i) * 100, 300) : Math.min(Math.floor(i) * 100, 600);
@@ -59,15 +57,17 @@ const IconCardList: FunctionComponent<IconCardSectionType> = ({items, content, t
         animate
         animationDelay={delay}
         buttons={
-          <Grid container
-                alignItems={"flex-start"}>{card?.buttons?.map && slice(card.buttons.map(makeButtons), 0, 3)}</Grid>
+          <Hidden smDown>
+            <Grid container alignItems={"flex-start"}>{card?.buttons?.map && slice(card.buttons.map(makeButtons), 0, 3)}
+            </Grid>
+          </Hidden>
         }
       >
         <SectionContentMarkdown content={card.content}/>
       </StyledIconCard>;
     })}
 
-  </SectionContainer>;
+  </>;
 };
 
 export default IconCardList

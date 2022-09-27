@@ -2,11 +2,20 @@
   "palette": {
     "waveAngle": "45",
     "primary": {
-      "main": "#A51D27"
+      "main": "#A51D27",
+      "light": "#B74A52",
+      "dark": "#73141B"
     },
     "secondary": {
-      "main": "#5B215F"
+      "main": "#47236f"
     },
+    "info": {
+      "main": "#1e7cc1"
+    },
+    "success": {
+      "main": "#06c90a"
+    },
+    "divider": "rgba(100,100,100,0.64)",
     "tonalOffset": 0.2,
     "spacing": 16
   },

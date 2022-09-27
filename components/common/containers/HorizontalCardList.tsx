@@ -2,11 +2,11 @@ import {Button, ButtonGroup} from "@mui/material";
 import Link from 'next/link'
 import React, {FunctionComponent} from "react";
 import {HorizontalCardSection as IHorizontalCardSection, InteractionItem} from "../../../store/types/home";
-import SectionContainer from "../SectionContainer";
 import {slice} from "lodash-es";
 import SectionContentMarkdown from "../elements/SectionContentMarkdown";
 import HorizontalCard from "../HorizontalCard";
 import {styled} from "@mui/material/styles";
+import {Stack} from "@mui/system";
 
 
 const HorizontalIconCard = styled(HorizontalCard)({
@@ -16,12 +16,12 @@ const HorizontalIconCard = styled(HorizontalCard)({
 })
 
 type HorizontalCardSectionProps = IHorizontalCardSection
-const HorizontalCardList: FunctionComponent<HorizontalCardSectionProps> = ({items, title, subTitle}) => {
+const HorizontalCardList: FunctionComponent<HorizontalCardSectionProps> = ({items}) => {
   const makeButtons = (button: InteractionItem) => {
     return <Link key={button.link} href={button.link} passHref={true}><Button>{button.title}</Button></Link>
   }
 
-  return <SectionContainer title={title} subTitle={subTitle}>
+  return <Stack spacing={2}>
     {items && items.map((card, i) => {
       return <HorizontalIconCard
         key={`${card.order}_${card.image}`}
@@ -37,7 +37,7 @@ const HorizontalCardList: FunctionComponent<HorizontalCardSectionProps> = ({item
         <SectionContentMarkdown content={card.content}/>
       </HorizontalIconCard>;
     })}
-  </SectionContainer>;
+  </Stack>;
 };
 
 export default HorizontalCardList

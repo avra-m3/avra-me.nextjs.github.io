@@ -13,6 +13,7 @@ import {css} from "@emotion/react";
 
 
 interface IWaveCardProps {
+  children: ReactNode
   className?: string,
   inverse?: boolean,
   before?: ReactNode

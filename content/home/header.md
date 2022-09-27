@@ -2,6 +2,7 @@
 type: JumboHeader
 order: 0
 disabled: false
+image: /assets/banner-primary.svg
 ---
 
 <style>
@@ -16,16 +17,20 @@ disabled: false
 }
 .hackerman * {
     display: inline-block;
-    font-family: "JetBrains Mono";
+    font-family: "JetBrains Mono",monospace;
 }
-.hackerman.prompt :first-child {
+.hackerman * {
     margin-left: 1.2ch;
+}
+.hackerman.output {
+    border-left: 1px solid white;
+    border-radius: 4px;
+    padding-left: 1.2ch;
 }
 .hackerman.prompt:after {
     display: inline-block;
     width: 100%;
     height: 2px;
-    border: 1px inset white;
     border-radius: 2px;
     position: absolute;
     bottom: -10px;
@@ -43,7 +48,7 @@ disabled: false
     width: .8ch;
 }
 </style>
-<h1 class="hackerman prompt"><strong>avrami</strong></h1>
-<span class="hackerman output">
+<h1 class="hackerman prompt"><b>avrami</b></h1>
+<h2 class="hackerman output">
 Designing scalable systems across the full software stack for a wide range of industries
-</span>
+</h2>

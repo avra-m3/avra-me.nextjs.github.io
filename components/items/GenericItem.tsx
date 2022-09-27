@@ -12,7 +12,7 @@ const StyledHorizontalCard = styled(HorizontalCard)({
   flexDirection: "column"
 })
 
-const GenericItemExperience: FunctionComponent<GenericItem> = ({title, subTitle, ...item}) => {
+const GenericItemExperience: FunctionComponent<GenericItem> = ({title, ...item}) => {
   const makeButtons = (button: InteractionItem) => {
     return <Button key={button.link} href={button.link}>{button.title}</Button>
   }

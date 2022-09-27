@@ -1,6 +1,7 @@
 type: HorizontalCardSection
 order: 3
-title: "Experience"
+section:
+  title: "Experience"
 children:
   source: education/cards
   key: items
