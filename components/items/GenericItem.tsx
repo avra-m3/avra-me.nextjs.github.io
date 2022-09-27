@@ -12,7 +12,7 @@ const StyledHorizontalCard = styled(HorizontalCard)({
   flexDirection: "column"
 })
 
-const GenericItemExperience: FunctionComponent<GenericItem> = ({...item}) => {
+const GenericItemExperience: FunctionComponent<GenericItem> = ({title, subTitle, ...item}) => {
   const makeButtons = (button: InteractionItem) => {
     return <Button key={button.link} href={button.link}>{button.title}</Button>
   }
@@ -27,7 +27,8 @@ const GenericItemExperience: FunctionComponent<GenericItem> = ({...item}) => {
           {item?.link && makeButtons({link: item.link, title: 'View Item'})}
         </ButtonGroup>
       }
-      title={item.title}
+      title={title}
+      titleVariant={"h1"}
     >
       <Tooltip
         title={startDate !== endDate ? `From ${startDate} to ${endDate}`: `${startDate}`}

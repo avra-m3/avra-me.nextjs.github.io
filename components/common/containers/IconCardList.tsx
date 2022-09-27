@@ -29,7 +29,7 @@ const StyledChip: typeof Chip = styled(Chip)(css`
   }
 `) as typeof Chip;
 
-const IconCardList: FunctionComponent<IconCardSectionType> = ({items, content}) => {
+const IconCardList: FunctionComponent<IconCardSectionType> = ({items, content, title, subTitle}) => {
   const isMdUp = useMediaQuery((theme: Theme) => theme.breakpoints.up("md"));
 
 
@@ -47,10 +47,8 @@ const IconCardList: FunctionComponent<IconCardSectionType> = ({items, content}) 
     return <Link key={link} href={link} passHref={true}>{chip}</Link>
   };
 
-  return <SectionContainer>
-    <Grid xs={12} item>
-      <SectionTitleMarkdown content={content}/>
-    </Grid>
+  return <SectionContainer title={title} subTitle={subTitle}>
+
     {items && items.map((card, i) => {
       const delay = isMdUp ? Math.min(Math.floor(i) * 100, 300) : Math.min(Math.floor(i) * 100, 600);
       return <StyledIconCard

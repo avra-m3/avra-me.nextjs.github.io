@@ -16,7 +16,7 @@ const StyledWaveCard = styled(WaveCard)({
 })
 
 
-const WaveCardList: FunctionComponent<WaveCardSectionType> = ({items, content}) => {
+const WaveCardList: FunctionComponent<WaveCardSectionType> = ({items, title, subTitle}) => {
   const makeButtons = (chip: InteractionItem) => {
     const {link, title, tooltip, icon} = chip;
     const button = <Button key={link} href={link} size={"small"} variant={"outlined"}>
@@ -28,10 +28,7 @@ const WaveCardList: FunctionComponent<WaveCardSectionType> = ({items, content}) 
     return button
   };
 
-  return <SectionContainer>
-    <Grid xs={12} item>
-      <SectionTitleMarkdown content={content}/>
-    </Grid>
+  return <SectionContainer title={title} subTitle={subTitle}>
     {items && items.map((card, i) => {
       return <StyledWaveCard
         key={`${card.order}_${card.content}`}

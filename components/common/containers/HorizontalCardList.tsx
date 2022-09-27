@@ -1,4 +1,4 @@
-import {Button, ButtonGroup, Grid} from "@mui/material";
+import {Button, ButtonGroup} from "@mui/material";
 import Link from 'next/link'
 import React, {FunctionComponent} from "react";
 import {HorizontalCardSection as IHorizontalCardSection, InteractionItem} from "../../../store/types/home";
@@ -6,7 +6,6 @@ import SectionContainer from "../SectionContainer";
 import {slice} from "lodash-es";
 import SectionContentMarkdown from "../elements/SectionContentMarkdown";
 import HorizontalCard from "../HorizontalCard";
-import SectionTitleMarkdown from "../elements/SectionTitleMarkdown";
 import {styled} from "@mui/material/styles";
 
 
@@ -17,15 +16,12 @@ const HorizontalIconCard = styled(HorizontalCard)({
 })
 
 type HorizontalCardSectionProps = IHorizontalCardSection
-const HorizontalCardList: FunctionComponent<HorizontalCardSectionProps> = ({items, content}) => {
+const HorizontalCardList: FunctionComponent<HorizontalCardSectionProps> = ({items, title, subTitle}) => {
   const makeButtons = (button: InteractionItem) => {
     return <Link key={button.link} href={button.link} passHref={true}><Button>{button.title}</Button></Link>
   }
 
-  return <SectionContainer>
-    <Grid xs={12} item>
-      <SectionTitleMarkdown content={content}/>
-    </Grid>
+  return <SectionContainer title={title} subTitle={subTitle}>
     {items && items.map((card, i) => {
       return <HorizontalIconCard
         key={`${card.order}_${card.image}`}

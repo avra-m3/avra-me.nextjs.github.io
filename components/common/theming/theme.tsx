@@ -8,6 +8,12 @@ export const generateTheme = (config: Partial<ThemeOptions>): Theme => {
   config = cloneDeep(config);
   const mode = config?.palette?.mode || 'light';
   const baseTheme = createTheme({
+    typography: {
+      // fontSize: 9,
+      // fontFamily: [
+      //   'Jetbrains Mono',
+      // ].join(',')
+    },
     palette: {
       mode
     }

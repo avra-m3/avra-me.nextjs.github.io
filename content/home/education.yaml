@@ -12,5 +12,5 @@ children:
             ##### *{{title}}* {{subTitle}}
             {{ content }}
         buttons: []
-content: |
-    #### Education *I'm always learning, but here is my formal education.*
+title: Education
+subTitle: I'm always learning, but here is my formal education.

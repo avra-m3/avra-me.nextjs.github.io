@@ -31,7 +31,8 @@ const FillImage = styled('img')({
 
 interface HorizontalCardProps extends CardProps {
   image: string;
-  title: string
+  title: string;
+  titleVariant?: React.ElementType;
   flip: boolean
   link?: string
   buttons?: (string | React.ReactElement)
@@ -44,7 +45,8 @@ const HorizontalCard: FunctionComponent<HorizontalCardProps> = (
     image,
     link,
     buttons,
-    flip
+    flip,
+    titleVariant = "h3"
   }) => {
   return (
 
@@ -81,6 +83,7 @@ const HorizontalCard: FunctionComponent<HorizontalCardProps> = (
               <CardContent>
                 <Typography
                   gutterBottom={false}
+                  component={titleVariant}
                   variant={"h4"}
                   color={"secondary"}
                 >
