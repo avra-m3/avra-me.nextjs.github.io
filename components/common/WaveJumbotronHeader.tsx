@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from "react";
+import React, {FunctionComponent, ReactNode} from "react";
 import {Grid, Theme} from "@mui/material";
 import WaveJumbotron from "./WaveJumbotron";
 
@@ -6,6 +6,7 @@ import WaveJumbotron from "./WaveJumbotron";
 interface IWaveJumbotronHeaderProps {
   theme?: Theme,
   monogram?: string,
+  children: ReactNode
 }
 
 const WaveJumbotronHeader: FunctionComponent<IWaveJumbotronHeaderProps> = (props) => {

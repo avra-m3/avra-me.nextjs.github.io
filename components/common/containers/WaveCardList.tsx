@@ -1,11 +1,9 @@
-import {Button, CardActions, CardContent, Grid, Icon, Tooltip} from "@mui/material";
+import {Button, CardActions, CardContent, Icon, Tooltip} from "@mui/material";
 import React, {FunctionComponent} from "react";
 import {InteractionItem, WaveCardSection as WaveCardSectionType} from "../../../store/types/home";
-import SectionContainer from "../SectionContainer";
 import WaveCard from "../WaveCard";
 import {slice} from "lodash-es";
 import SectionContentMarkdown from "../elements/SectionContentMarkdown";
-import SectionTitleMarkdown from "../elements/SectionTitleMarkdown";
 import {styled} from "@mui/material/styles";
 
 
@@ -16,7 +14,7 @@ const StyledWaveCard = styled(WaveCard)({
 })
 
 
-const WaveCardList: FunctionComponent<WaveCardSectionType> = ({items, content}) => {
+const WaveCardList: FunctionComponent<WaveCardSectionType> = ({items}) => {
   const makeButtons = (chip: InteractionItem) => {
     const {link, title, tooltip, icon} = chip;
     const button = <Button key={link} href={link} size={"small"} variant={"outlined"}>
@@ -28,10 +26,7 @@ const WaveCardList: FunctionComponent<WaveCardSectionType> = ({items, content}) 
     return button
   };
 
-  return <SectionContainer>
-    <Grid xs={12} item>
-      <SectionTitleMarkdown content={content}/>
-    </Grid>
+  return <>
     {items && items.map((card, i) => {
       return <StyledWaveCard
         key={`${card.order}_${card.content}`}
@@ -45,7 +40,7 @@ const WaveCardList: FunctionComponent<WaveCardSectionType> = ({items, content}) 
         </CardActions>
       </StyledWaveCard>;
     })}
-  </SectionContainer>;
+  </>;
 };
 
 export default WaveCardList

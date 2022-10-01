@@ -35,7 +35,7 @@ function MyApp({Component, pageProps, emotionCache = clientSideEmotionCache}: My
     </NoSsr>
     <CacheProvider value={emotionCache}>
       <RootThemeProvider>
-        <CssBaseline/>
+        <CssBaseline enableColorScheme={true}/>
         <CustomStyles/>
         <NavigationBar/>
         <Component {...pageProps} key={router.route}/>

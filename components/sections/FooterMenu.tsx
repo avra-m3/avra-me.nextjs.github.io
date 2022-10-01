@@ -1,6 +1,6 @@
 import type {AppState} from "../../store";
 import type {AttributionItem, FooterState, SocialButton} from "../../store/types/footer";
-import React, {FunctionComponent} from "react";
+import React, {FunctionComponent, ReactNode} from "react";
 import {connect, ConnectedProps} from "react-redux";
 import dynamic from "next/dynamic";
 
@@ -9,10 +9,10 @@ const Footer = dynamic(() => import("../footer/Footer"))
 const connector = connect((state: AppState, props: Partial<FooterState>) => ({
   ...state.footer,
   ...props,
-  isValid: !!state.footer
+  isValid: !!state.footer,
 }))
 
-const FooterMenu: FunctionComponent<FooterState & ConnectedProps<typeof connector>> = (
+const FooterMenu: FunctionComponent<FooterState & ConnectedProps<typeof connector> & {children?: ReactNode}> = (
   {
     buttons,
     header,

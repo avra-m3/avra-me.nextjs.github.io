@@ -1,7 +1,7 @@
-import React, {FunctionComponent} from "react";
+import React, {FunctionComponent, ReactNode} from "react";
 import {Box, Grid, Hidden, IconButton, Typography} from "@mui/material";
 
-import {darken, styled} from "@mui/system"
+import {lighten, styled} from "@mui/system"
 import {useTheme,} from '@mui/system';
 
 import Avatar from "@mui/material/Avatar";
@@ -16,13 +16,14 @@ interface IFooterProps {
   attributionIcons: AttributionItem[],
   socialIcons: SocialButton[],
   disabled?: boolean,
+  children: ReactNode
 }
 
 const DarkIconButton = styled(IconButton)(({theme}) => ({
   fill: theme.palette.common.white,
-  backgroundColor: darken(theme.palette.primary.light, .75),
+  backgroundColor: theme.palette.primary.main,
   '&:hover': {
-    backgroundColor: theme.palette.primary.light
+    backgroundColor: lighten(theme.palette.primary.main, .25)
   }
   // Seems emotion doesn't type 100% correctly yet
 })) as typeof IconButton;

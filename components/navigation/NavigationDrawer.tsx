@@ -123,6 +123,9 @@ const NavigationDrawer: FunctionComponent<INavigationDrawerProps> = (props) => {
                 </Link>
               );
             }
+            if("onClick" in element){
+              return null;
+            }
             return (
               element
             );

@@ -1,6 +1,7 @@
 type: HorizontalCardSection
 order: 3
-title: "Experience"
+section:
+  title: "Experience"
 children:
   source: experience/cards
   key: items
@@ -11,4 +12,4 @@ children:
     image: '{{ image }}'
     content: '{{ short }}'
     buttons:
-      - { title: "Read More", link: "/experience/{{slug}}" }
+      - { title: "About {{subTitle}}", link: "/experience/{{slug}}" }

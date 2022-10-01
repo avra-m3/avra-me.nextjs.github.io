@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from "react";
+import React, {FunctionComponent, ReactNode} from "react";
 import {useTheme} from '@mui/system';
 import Container from "@mui/material/Container";
 import WaveBorderCanvas from "./elements/WaveBorderCanvas";
@@ -18,13 +18,13 @@ export const getWaveAreaClass = (theme: any) => css`
       background-position: 0 50%;
     }
   }
-  background: linear-gradient(${theme.palette.waveAngle}deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100% );
+  background: linear-gradient(${theme.palette.waveAngle}deg, ${theme.palette.primary.light} 0%, ${theme.palette.primary.dark} 100% );
   background-size: 400% 400%;
   animation: animateGradient 16s ease infinite;
 `
 
 export const WaveRoot = styled('span')(({theme}) => getWaveAreaClass(theme))
-const WaveJumbotron: FunctionComponent = (props) => {
+const WaveJumbotron: FunctionComponent<{children: ReactNode}> = (props) => {
   const {children} = props;
   const theme = useTheme();
   return (

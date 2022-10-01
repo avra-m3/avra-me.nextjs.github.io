@@ -44,7 +44,7 @@ const DynamicFormField: FC<IFormField> = ({type, title, name, placeholder, icon}
   </FormControl>
 }
 
-const DynamicForm: FC<Omit<IDynamicForm, 'content' | 'order' | 'type'>> = ({fields, name}) => {
+const DynamicForm: FC<Omit<IDynamicForm, 'title' | 'subTitle' | 'content' | 'order' | 'type'>> = ({fields, name}) => {
   // hack to get around broke placeholder layout
   let submitButtonText = "Send Message"
 
