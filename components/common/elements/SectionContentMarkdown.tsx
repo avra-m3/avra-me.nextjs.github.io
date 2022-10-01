@@ -39,10 +39,10 @@ const MarkdownContainer = styled("div")(({theme}) => css([
       li: theme.typography.body2,
       color: theme.palette.text.primary,
       h1: theme.typography.h1,
-      h2: theme.typography.h4,
-      h3: theme.typography.h3,
-      h4: theme.typography.h4,
-      h5: theme.typography.h5,
+      h2: theme.typography.h5,
+      h3: theme.typography.h6,
+      h4: theme.typography.h6,
+      h5: theme.typography.h6,
       h6: theme.typography.h6,
     } as unknown as CSSInterpolation
   ])

@@ -53,7 +53,6 @@ const IconCardList: FunctionComponent<IconCardSectionType> = ({items}) => {
         key={`${card.order}_${card.icon}`}
         headline={card.title}
         icon={<Icon style={{fontSize: 30}}>{card.icon}</Icon>}
-        color={card.color}
         animate
         animationDelay={delay}
         buttons={

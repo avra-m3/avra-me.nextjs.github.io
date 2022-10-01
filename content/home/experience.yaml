@@ -16,4 +16,4 @@ children:
         image: '{{ image }}'
         content: '{{ short }}'
         buttons:
-            - { title: "Read More", link: "/experience/{{slug}}" }
+            - { title: "More about {{subTitle}}", link: "/experience/{{slug}}" }

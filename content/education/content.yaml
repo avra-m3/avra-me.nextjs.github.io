@@ -1,7 +1,7 @@
 type: HorizontalCardSection
 order: 3
 section:
-  title: "Experience"
+  title: "Education"
 children:
   source: education/cards
   key: items
@@ -11,6 +11,6 @@ children:
     order: '{{endDate}}'
     image: '{{image}}'
     content: |
-      ##### *{{title}}* {{subTitle}}
+      ## *{{title}}* {{subTitle}}
       {{ content }}
     buttons: []

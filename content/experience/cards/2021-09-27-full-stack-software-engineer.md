@@ -16,11 +16,14 @@ tags:
   - leadership
   - solution design 
 short: >-
-    ##### *Last Yard* Full-Stack Software Engineer
+    ## *Last Yard* Full-Stack Software Engineer
   
     Last Yard builds software solutions for the largest retailers in Australia and
-    around the world. My role at last yard primarily involved the development of a new
-    pdf rendering engine and an accompanying user-facing design tool.
+    around the world.
+    
+    
+    My role at last yard primarily involves the development of a new
+    PDF/Image rendering engine and an accompanying user-facing design tool.
 featured: true
 ---
 Last Yard builds software solutions for the largest retailers in Australia and around the world.
@@ -51,7 +54,7 @@ My day-to-day responsibilities involved the following technologies;
 - On call for production outages, alerts, escalations. Responsible for resolving any infrastructure issues that occurred. 
 - Automated local dev environment setup with ansible.
 
-##### Achievements:
+## Achievements:
 - Architected and rolled out high-throughput, high-reliability IOT-based retail solution.
 - Supported Sales activities in a successful demo/pilot worth > 10,000 MRR.
 - Championed and successfully transitioned the development environment to a docker-based architecture.

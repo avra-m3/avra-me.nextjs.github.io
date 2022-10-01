@@ -10,7 +10,6 @@ import AppearOnScroll from "./elements/AppearOnScroll";
 
 interface IconCardProps extends CardProps {
   icon: string | React.ReactElement;
-  color: string;
   headline: string;
   animate: boolean;
   animationDelay: number;
@@ -20,7 +19,6 @@ interface IconCardProps extends CardProps {
 const IconCard: FunctionComponent<IconCardProps> = (props) => {
   const {
     icon,
-    color = "#fff",
     headline,
     children,
     animate,
@@ -30,7 +28,7 @@ const IconCard: FunctionComponent<IconCardProps> = (props) => {
   } = props;
   const iconStyling = {
     color: 'background.default',
-    backgroundColor: color,
+    backgroundColor: 'primary.dark',
     fill: 'background.default',
   };
 

@@ -1,6 +1,6 @@
 import Grid from "@mui/material/Grid";
 import React, {FunctionComponent} from "react";
-import {Card, CardProps, Typography} from "@mui/material";
+import {Card, CardProps} from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import AppearOnScroll from "./elements/AppearOnScroll";
@@ -30,8 +30,6 @@ const FillImage = styled('img')({
 
 interface HorizontalCardProps extends CardProps {
   image: string;
-  title: string;
-  titleVariant?: React.ElementType;
   flip: boolean
   link?: string
   buttons?: (string | React.ReactElement)
@@ -40,11 +38,9 @@ interface HorizontalCardProps extends CardProps {
 const HorizontalCard: FunctionComponent<HorizontalCardProps> = (
   {
     children,
-    title,
     image,
     buttons,
     flip,
-    titleVariant = "h3"
   }) => {
   return (
 
@@ -68,14 +64,7 @@ const HorizontalCard: FunctionComponent<HorizontalCardProps> = (
         </Grid>
         <Grid item xs>
           <CardContent>
-            <Typography
-              gutterBottom={false}
-              component={titleVariant}
-              variant={"h4"}
-              color={"secondary"}
-            >
-              {title}
-            </Typography>
+
             {children}
           </CardContent>
           <CardActions>
