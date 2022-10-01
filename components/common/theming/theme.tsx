@@ -10,9 +10,13 @@ export const generateTheme = (config: Partial<ThemeOptions>): Theme => {
   const baseTheme = createTheme({
     typography: {
       // fontSize: 9,
-      // fontFamily: [
-      //   'Jetbrains Mono',
-      // ].join(',')
+      fontWeightLight: 400,
+      fontWeightRegular: 600,
+      fontWeightBold: 800,
+      fontWeightMedium: 600,
+      fontFamily: [
+        'Inter',
+      ].join(',')
     },
     palette: {
       mode

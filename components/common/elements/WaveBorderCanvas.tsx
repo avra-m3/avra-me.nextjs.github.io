@@ -16,6 +16,8 @@ const FillDiv = styled('div')(css`
     left: 0;
     width: 100%;
     height: 100%;
+    // Fix to a very weird chrome bug :/
+    opacity: .99;
   }
 `)
 

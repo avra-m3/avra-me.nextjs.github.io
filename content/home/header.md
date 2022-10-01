@@ -4,51 +4,8 @@ order: 0
 disabled: false
 image: /assets/banner-primary.svg
 ---
-
-<style>
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}
-.hackerman {
-    text-align: left !important;
-    position: relative;
-}
-.hackerman * {
-    display: inline-block;
-    font-family: "JetBrains Mono",monospace;
-}
-.hackerman * {
-    margin-left: 1.2ch;
-}
-.hackerman.output {
-    border-left: 1px solid white;
-    border-radius: 4px;
-    padding-left: 1.2ch;
-}
-.hackerman.prompt:after {
-    display: inline-block;
-    width: 100%;
-    height: 2px;
-    border-radius: 2px;
-    position: absolute;
-    bottom: -10px;
-    content: '';
-    left: 6px;
-}
-.hackerman.prompt:before {
-    fill: #FFF;
-    animation: blinker 1s step-end infinite;
-    content: url("data:image/svg+xml,%3Csvg class='before' fill='white' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z'/%3E%3C/svg%3E");
-    position: absolute;
-    left: 0;
-    top: 5px;
-    text-align: left;
-    width: .8ch;
-}
-</style>
-<h1 class="hackerman prompt"><b>avrami</b></h1>
-<h2 class="hackerman output">
-Designing scalable systems across the full software stack for a wide range of industries
-</h2>
+<h1><div class="page-title">Hello, My name is <b class="secondary-emphasis">Avrami</b></div>
+<div class="page-subheading">
+I design and implement scalable systems across the full software stack.
+</div>
+</h1>

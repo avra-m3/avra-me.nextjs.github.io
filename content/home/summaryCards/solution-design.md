@@ -6,7 +6,7 @@ children:
     key: buttons
     match:
       tags: [software architecture, solution design, architecture, cloud]
-    orderBy: [endDate, startDate]
+    orderBy: [-endDate]
     fields:
       title: '{{subTitle}}'
       tooltip: '{{title}}'
@@ -16,7 +16,7 @@ children:
     key: buttons
     match:
       tags: [software architecture, solution design, architecture, cloud]
-    orderBy: [endDate, startDate]
+    orderBy: [-endDate]
     fields:
       title: '{{subTitle}}'
       tooltip: '{{title}}'

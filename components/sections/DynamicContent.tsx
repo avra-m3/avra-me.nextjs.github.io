@@ -46,7 +46,7 @@ const DynamicContent: FunctionComponent<DynamicContentProps> = ({items}) => {
     const component = getItemComponent(item)
     if (item.section) {
       const {elevate, ...headerProps} = item.section;
-      return <SectionContainer elevate={elevate} header={<SectionHeader {...headerProps}/>}>
+      return <SectionContainer key={item.section.title} elevate={elevate} header={<SectionHeader {...headerProps}/>}>
         {component}
       </SectionContainer>
     }

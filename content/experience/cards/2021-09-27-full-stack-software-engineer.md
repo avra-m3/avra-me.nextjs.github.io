@@ -9,12 +9,18 @@ summaryCards:
   - leadership
   - communication
   - software
-  - developer
+  - developer 
+tags:
+  - software development
+  - communication
+  - leadership
+  - solution design 
 short: >-
-  ##### *Last Yard* Full-Stack Software Engineer
+    ##### *Last Yard* Full-Stack Software Engineer
   
-  Last Yard builds software solutions for the largest retailers in Australia and
-  around the world.
+    Last Yard builds software solutions for the largest retailers in Australia and
+    around the world. My role at last yard primarily involved the development of a new
+    pdf rendering engine and an accompanying user-facing design tool.
 featured: true
 ---
 Last Yard builds software solutions for the largest retailers in Australia and around the world.

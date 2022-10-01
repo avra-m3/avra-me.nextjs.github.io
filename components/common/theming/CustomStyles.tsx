@@ -47,7 +47,6 @@ const StaticGlobalStyling = css`
   .text-white {
     color: white;
   }
-
   .row {
     display: flex;
     flex-wrap: wrap;

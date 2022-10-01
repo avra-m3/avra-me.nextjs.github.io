@@ -6,7 +6,7 @@ children:
     key: buttons
     match:
       tags: ['communication', 'leadership']
-    orderBy: [endDate, startDate]
+    orderBy: [-endDate]
     fields:
       title: '{{subTitle}}'
       tooltip: '{{title}}'
@@ -16,12 +16,14 @@ children:
     key: buttons
     match:
       tags: ['communication', 'leadership']
-    orderBy: [endDate, startDate]
+    orderBy: [-endDate]
     fields:
       title: '{{subTitle}}'
       tooltip: '{{title}}'
       link: '/experience/{{slug}}'
       icon: 'work_outline'
+    filter:
+      featured: true
 
 icon: people
 color: "#6200EA"
